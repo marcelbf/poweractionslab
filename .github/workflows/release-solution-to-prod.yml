@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       # Change this value
-      solution_name: ALMLab
+      solution_name: 'ALMLab'
         description: 'name of the solution to worked on from Power Platform'
         required: true
         default: ALMLab
