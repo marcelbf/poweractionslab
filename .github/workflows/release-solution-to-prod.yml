@@ -4,6 +4,9 @@ name: release-solution-to-prod
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
 on:
   workflow_dispatch:
+  
+  release:
+    types: [created]
     inputs:
       # Change this value
       solution_name:
@@ -27,9 +30,6 @@ on:
        description: 'folder where the released binaries are going to be hosted *do not change*'
        required: true
        default: out/release
-  release:
-    types: [created]
-  
 
 env:
 #edit your values here
