@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="quickSolution3.plugin2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=0aead39e1bad8457" PluginAssemblyId="9c85aef9-9e5e-433a-b18b-86576c2cdd65" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/quickSolution3plugin2-9C85AEF9-9E5E-433A-B18B-86576C2CDD65/quickSolution3plugin2.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="quickSolution3.plugin2.PostOperationaccountCreate, quickSolution3.plugin2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=0aead39e1bad8457" PluginTypeId="cd1f81a6-0749-4eec-baae-7c3aee6ee3ff" Name="quickSolution3.plugin2.PostOperationaccountCreate">
+      <FriendlyName>42bf5a3c-3a14-4435-a479-bb2e4a0b1d42</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

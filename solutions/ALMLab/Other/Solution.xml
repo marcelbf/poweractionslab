@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.22014.133" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.22021.131" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>ALMLab</UniqueName>
     <LocalizedNames>
@@ -81,6 +81,8 @@
       <RootComponent type="1" schemaName="almlab_timeoffrequest" behavior="0" />
       <RootComponent type="62" schemaName="almlab_TimeOffRequests" behavior="0" />
       <RootComponent type="80" schemaName="almlab_TimeOffRequests" behavior="0" />
+      <RootComponent type="91" id="{9c85aef9-9e5e-433a-b18b-86576c2cdd65}" schemaName="quickSolution3.plugin2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=0aead39e1bad8457" behavior="0" />
+      <RootComponent type="92" id="{7f5cfb6b-519b-ec11-b400-002248042f85}" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
