@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   
   release:
-    types: [created]
+    #types: [created]
     inputs:
       # Change this value
       solution_name:
