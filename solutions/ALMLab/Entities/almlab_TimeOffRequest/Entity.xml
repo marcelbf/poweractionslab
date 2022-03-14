@@ -127,7 +127,7 @@
             <displayname description="Created By" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="Unique identifier of the user who created the record" languagecode="1033" />
+            <Description description="Unique identifier of the user who created the record." languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="CreatedOn">
