@@ -14,31 +14,40 @@ on:
        #Do Not change these values
       solution_shipping_folder:
         description: 'folder name for staging the exported solution *do not change*'
-        required: true
+        required: false
         type: string
         default: out/ship/
       solution_outbound_folder:
         description: 'staging the unpacked solution folder before check-in *do not change*'
-        required: true
+        required: false
         type: string
         default: out/solutions/
       solution_source_folder: 
        description: 'folder name to be created and checked in *do not change*'
-       required: true
+       required: false
        type: string
        default: solutions/
       solution_release_folder:
        description: 'folder where the released binaries are going to be hosted *do not change*'
-       required: true
+       required: false
        type: string
        default: out/release
-
-env:
-#edit your values here
-  BUILD_ENVIRONMENT_URL: 'https://marcelbuild.crm.dynamics.com'
-  PRODUCTION_ENVIRONMENT_URL: 'https://marcelprod.crm.dynamics.com'
-  CLIENT_ID: 'f6d88eaf-8e50-4b1f-93f2-b3af56880603'
-  TENANT_ID: 'ec6b17bb-11d0-4195-abd0-521c69a5d1fd'
+      BUILD_ENVIRONMENT_URL:
+        description: 'environment url: https://marcelbuild.crm.dynamics.com'
+        type: string
+        required: true      
+      PRODUCTION_ENVIRONMENT_URL: 
+        description: 'https://marcelprod.crm.dynamics.com'
+        type: string
+        required: true
+      CLIENT_ID: 
+        description: 'f6d88eaf-8e50-4b1f-93f2-b3af56880603'
+        type: string
+        required: true
+      TENANT_ID: 
+        description: 'ec6b17bb-11d0-4195-abd0-521c69a5d1fd'
+        type: string
+        required: true
 
 jobs:
   convert-to-managed:
@@ -62,10 +71,10 @@ jobs:
     - name: Import solution as unmanaged to build env
       uses: microsoft/powerplatform-actions/import-solution@0.4.0
       with:
-        environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
-        app-id: ${{env.CLIENT_ID}}
+        environment-url: ${{inputs.BUILD_ENVIRONMENT_URL}}
+        app-id: ${{inputs.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: ${{env.TENANT_ID}}
+        tenant-id: ${{inputs.TENANT_ID}}
         solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
         force-overwrite: true
         publish-changes: true
