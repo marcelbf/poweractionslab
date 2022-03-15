@@ -5,10 +5,7 @@ name: test
 on:
   workflow_dispatch:
   
-  release:
-    types: [created]
-    inputs:
-      # Change this value
+  inputs:
       solution_name:
         description: 'name of the solution to worked on from Power Platform'
         required: true
