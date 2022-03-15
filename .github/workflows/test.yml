@@ -37,6 +37,7 @@ env:
   PRODUCTION_ENVIRONMENT_URL: 'https://marcelprod.crm.dynamics.com'
   CLIENT_ID: 'f6d88eaf-8e50-4b1f-93f2-b3af56880603'
   TENANT_ID: 'ec6b17bb-11d0-4195-abd0-521c69a5d1fd'
+  SOLUTION: ${{ github.event.inputs.solution_name }}
 
 jobs:
   convert-to-managed:
@@ -53,7 +54,7 @@ jobs:
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@0.4.0
       with:
-        solution-folder: ${{ github.event.inputs.solution_source_folder}}/${{ github.events.inputs.solution_name }}
+        solution-folder: $SOLUTION
         solution-file: ${{ github.event.inputs.solution_outbound_folder}}/${{ github.events.inputs.solution_name }}.zip
         solution-type: Unmanaged
 
