@@ -1,4 +1,4 @@
-name: test
+name: Release created
 # prepare for releasing to prod:
 #   convert solution to managed (using a build PowerPlatform environment for the conversion)
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
@@ -7,7 +7,7 @@ on:
       types: [created]        
 
 jobs:
-  call-workflow:
+  Release-solution-ALMLab:
     uses: ./.github/workflows/release-solution-to-prod.yml
     with:
       #solution_name: ALMLab       
