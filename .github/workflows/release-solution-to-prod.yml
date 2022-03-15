@@ -5,13 +5,10 @@ name: release-solution-to-prod
 on:
   workflow_call:
     inputs: 
-      # Change this value
-      solution_name:
-        description: 'name of the solution to worked on from Power Platform'
-        required: false
+      #Do Not change these values
+      solution_name:        
         type: string
-        default: ALMLab
-       #Do Not change these values
+        default: ALMLab       
       solution_shipping_folder:
         description: 'folder name for staging the exported solution *do not change*'
         required: false
@@ -85,11 +82,11 @@ jobs:
     - name: Export solution as managed
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
-        environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
-        app-id: ${{env.CLIENT_ID}}
-        client-secret: ${{ secrets.PowerPlatformSPN }} 
-        tenant-id: ${{env.TENANT_ID}}
-        solution-name: ${{ github.event.inputs.solution_name }}
+        environment-url: ${{inputs.BUILD_ENVIRONMENT_URL}}
+        app-id: ${{inputs.CLIENT_ID}}
+        client-secret: ${{ secrets.envSecret }} 
+        tenant-id: ${{inputs.TENANT_ID}}
+        solution-name: ${{ inputs.solution_name }}
         managed: true
         solution-output-file: ${{ inputs.solution_shipping_folder}}/${{ inputs.solution_name }}.zip
 
@@ -119,9 +116,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@0.4.0
       with:
         environment-url: ${{env.PRODUCTION_ENVIRONMENT_URL}}
-        app-id: ${{env.CLIENT_ID}}
-        client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: ${{env.TENANT_ID}}
+        app-id: ${{inputs.CLIENT_ID}}
+        client-secret: ${{ secrets.envSecret }}
+        tenant-id: ${{inputs.TENANT_ID}}
         solution-file: ${{ inputs.solution_release_folder}}/${{ inputs.solution_name }}.zip
         force-overwrite: true
         publish-changes: true
