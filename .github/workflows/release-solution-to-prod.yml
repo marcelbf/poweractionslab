@@ -55,8 +55,8 @@ jobs:
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@0.4.0
       with:
-        solution-folder: ${{ github.event.inputs.solution_source_folder}}/${{ github.event.inputs.solution_name }}
-        solution-file: ${{ github.event.inputs.solution_outbound_folder}}/${{ github.event.inputs.solution_name }}.zip
+        solution-folder: ${{ inputs.solution_source_folder}}/${{ inputs.solution_name }}
+        solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
         solution-type: Unmanaged
 
     - name: Import solution as unmanaged to build env
@@ -66,7 +66,7 @@ jobs:
         app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
-        solution-file: ${{ github.event.inputs.solution_outbound_folder}}/${{ github.event.inputs.solution_name }}.zip
+        solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
         force-overwrite: true
         publish-changes: true
 
@@ -79,13 +79,13 @@ jobs:
         tenant-id: ${{env.TENANT_ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
         managed: true
-        solution-output-file: ${{ github.event.inputs.solution_shipping_folder}}/${{ github.event.inputs.solution_name }}.zip
+        solution-output-file: ${{ inputs.solution_shipping_folder}}/${{ inputs.solution_name }}.zip
 
     - name: Upload the ready to ship solution to GH artifact store
       uses: actions/upload-artifact@v2
       with:
         name: managedSolutions
-        path: ${{ github.event.inputs.solution_shipping_folder}}/${{ github.event.inputs.solution_name }}.zip
+        path: ${{ inputs.solution_shipping_folder}}/${{ inputs.solution_name }}.zip
 
   release-to-staging:
     needs: [ convert-to-managed ]
@@ -102,7 +102,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: managedSolutions
-        path: ${{ github.event.inputs.solution_release_folder}}
+        path: ${{ inputs.solution_release_folder}}
     - name: Import solution to prod env
       uses: microsoft/powerplatform-actions/import-solution@0.4.0
       with:
@@ -110,6 +110,6 @@ jobs:
         app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
-        solution-file: ${{ github.event.inputs.solution_release_folder}}/${{ github.event.inputs.solution_name }}.zip
+        solution-file: ${{ inputs.solution_release_folder}}/${{ inputs.solution_name }}.zip
         force-overwrite: true
         publish-changes: true
