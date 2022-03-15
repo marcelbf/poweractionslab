@@ -48,6 +48,9 @@ on:
         description: 'ec6b17bb-11d0-4195-abd0-521c69a5d1fd'
         type: string
         required: true
+    secrets:
+      envSecret:
+        required: true
 
 jobs:
   convert-to-managed:
@@ -73,7 +76,7 @@ jobs:
       with:
         environment-url: ${{inputs.BUILD_ENVIRONMENT_URL}}
         app-id: ${{inputs.CLIENT_ID}}
-        client-secret: ${{ secrets.PowerPlatformSPN }}
+        client-secret: ${{ secrets.envSecret }}
         tenant-id: ${{inputs.TENANT_ID}}
         solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
         force-overwrite: true
@@ -84,7 +87,7 @@ jobs:
       with:
         environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT_ID}}
-        client-secret: ${{ secrets.PowerPlatformSPN }}
+        client-secret: ${{ secrets.PowerPlatformSPN }} 
         tenant-id: ${{env.TENANT_ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
         managed: true
