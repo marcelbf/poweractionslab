@@ -4,9 +4,6 @@ name: release-solution-to-prod
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
 on:
   workflow_dispatch:
-  
-  release:
-    types: [created]
     inputs:
       # Change this value
       solution_name:
