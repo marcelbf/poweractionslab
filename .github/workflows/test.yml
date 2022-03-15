@@ -18,5 +18,6 @@ jobs:
       BUILD_ENVIRONMENT_URL: https://marcelbuild.crm.dynamics.com
       PRODUCTION_ENVIRONMENT_URL: https://marcelprod.crm.dynamics.com        
       CLIENT_ID: f6d88eaf-8e50-4b1f-93f2-b3af56880603       
-      TENANT_ID: ec6b17bb-11d0-4195-abd0-521c69a5d1fd                
+      TENANT_ID: ec6b17bb-11d0-4195-abd0-521c69a5d1fd
+    secrets:
       envSecret: ${{ secrets.PowerPlatformSPN }}
