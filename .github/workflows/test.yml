@@ -8,9 +8,7 @@ on:
 
 jobs:
   call-workflow:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/release-solution-to-prod.yml
-        with:
+    uses: ./.github/workflows/release-solution-to-prod.yml
+    with:
           solution-folder: 'test'
           
