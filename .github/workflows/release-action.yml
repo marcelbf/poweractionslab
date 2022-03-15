@@ -3,6 +3,7 @@ name: Release created
 #   convert solution to managed (using a build PowerPlatform environment for the conversion)
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
 on:
+  workflow_dispatch:
   release:
       types: [created]        
 
