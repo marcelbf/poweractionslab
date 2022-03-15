@@ -9,6 +9,5 @@ on:
 jobs:
   call-workflow:
     uses: ./.github/workflows/release-solution-to-prod.yml
-    with:
-          solution-folder: 'test'
+    
           
