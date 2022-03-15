@@ -7,10 +7,10 @@ on:
       types: [created]        
 
 jobs:
-  test_job:
+  call-workflow:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./github/workflows/release-solution-to-prod.yml
+      - uses: ./.github/workflows/release-solution-to-prod.yml
         with:
           solution-folder: 'test'
           
