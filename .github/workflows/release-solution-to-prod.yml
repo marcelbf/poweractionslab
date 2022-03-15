@@ -1,52 +1,50 @@
 name: release-solution-to-prod
-# prepare for releasing to prod:
-#   convert solution to managed (using a build PowerPlatform environment for the conversion)
-#   upload the solution to the GitHub artifacts and deploy to the PROD environment
+# Reusable workflow
+# convert solution to managed (using a build PowerPlatform environment for the conversion)
+# upload the solution to the GitHub artifacts and deploy to the PROD environment
 on:
   workflow_call:
     inputs: 
       #Do Not change these values
-      solution_name:        
+      solution_name:
+        description: 'The solution name.'
         type: string
         default: ALMLab       
       solution_shipping_folder:
-        description: 'folder name for staging the exported solution *do not change*'
-        required: false
+        description: 'folder name for staging the exported solution *do not change*'        
         type: string
         default: out/ship/
       solution_outbound_folder:
         description: 'staging the unpacked solution folder before check-in *do not change*'
-        required: false
         type: string
         default: out/solutions/
       solution_source_folder: 
        description: 'folder name to be created and checked in *do not change*'
-       required: false
        type: string
        default: solutions/
       solution_release_folder:
        description: 'folder where the released binaries are going to be hosted *do not change*'
-       required: false
        type: string
        default: out/release
       BUILD_ENVIRONMENT_URL:
-        description: 'environment url: https://marcelbuild.crm.dynamics.com'
+        description: 'Build environment url.'
         type: string
         required: true      
       PRODUCTION_ENVIRONMENT_URL: 
-        description: 'https://marcelprod.crm.dynamics.com'
+        description: 'Production environment url.'
         type: string
         required: true
       CLIENT_ID: 
-        description: 'f6d88eaf-8e50-4b1f-93f2-b3af56880603'
+        description: 'The client id'
         type: string
         required: true
       TENANT_ID: 
-        description: 'ec6b17bb-11d0-4195-abd0-521c69a5d1fd'
+        description: 'The tenant id'
         type: string
         required: true
     secrets:
       envSecret:
+        description: 'The secret value for authentication using SPN'
         required: true
 
 jobs:
