@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>cdev_leaverequesttablet_feddf</Name>
+  <AppVersion>2022-07-01T05:15:34Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.22062.5.0</CreatedByClientVersion>
+  <MinClientVersion>3.22062.5.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"false","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22062.5","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20220701T051534Z-3.22062.5.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>rgba(0, 176, 240, 1)</BackgroundColor>
+  <DisplayName>Leave Request - Tablet</DisplayName>
+  <Description>Submit a vacation request for manager approval. Select date ranges, add notes and manage your time off.</Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"6f72918a-7921-fa64-14bf-78187ad1b172":{"id":"/providers/microsoft.powerapps/apis/shared_office365users","displayName":"Office 365 Users","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1573/1.0.1573.2770/office365users/icon.png","dataSources":["Office365Users"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"dataSets":{},"apiTier":"Standard","actions":["MyProfile","Manager","UserPhotoMetadata","UserPhoto","UserProfile","SearchUser"]},"3d08df1a-c8f0-4fc6-8115-bc671ed3b356":{"id":"/providers/microsoft.powerapps/apis/shared_office365","displayName":"Office 365 Outlook","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1580/1.0.1580.2838/office365/icon.png","dataSources":["Office365Outlook"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"dataSets":{},"apiTier":"Standard","actions":["SendEmailV2"]},"27c5bf9d-0490-4623-83fe-0f3c0b8c2a91":{"id":"/providers/microsoft.powerapps/apis/shared_excel","displayName":"Excel","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1570/1.0.1570.2764/excel/icon.png","dataSources":["Leave","Holidays","Balance"],"dependencies":["9f9e4d46-9e52-4329-b5ce-a1809ea224fc"],"dependents":[],"parameterHints":{"9f9e4d46-9e52-4329-b5ce-a1809ea224fc":{"value":"fileSource"}},"parameterHintsV2":{"fileSource":{"value":"9f9e4d46-9e52-4329-b5ce-a1809ea224fc"}},"isOnPremiseConnection":false,"dataSets":{"b!FKD48SnMwkiQquwCvEhBuFbtK_1Yc6NOiNCn_VBrSz06Qq2xtlVsQ5IFVrJbPN80.01WWEI5KDHGNTOFPINJJF3N3GSZMB2M2HJ":{"dataSources":{"Leave":{"tableName":"Leave"},"Holidays":{"tableName":"Holidays"},"Balance":{"tableName":"Balance"}}}},"apiTier":"Standard","actions":["providers/PowerPlatform.Governance/Operations/Read","providers/PowerPlatform.Governance/Operations/Write"]},"9f9e4d46-9e52-4329-b5ce-a1809ea224fc":{"id":"/providers/microsoft.powerapps/apis/shared_onedriveforbusiness","displayName":"OneDrive for Business","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1546/1.0.1546.2665/onedriveforbusiness/icon.png","dataSources":[],"dependencies":[],"dependents":["27c5bf9d-0490-4623-83fe-0f3c0b8c2a91"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"dataSets":{},"apiTier":"Standard"}}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/cdev_leaverequesttablet_feddf_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/cdev_leaverequesttablet_feddf_DocumentUri.msapp</DocumentUri>
+</CanvasApp>
