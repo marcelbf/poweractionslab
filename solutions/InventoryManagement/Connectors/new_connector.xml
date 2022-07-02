@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>809546ad-6ac7-ec11-a7b6-000d3a5c9834</connectorid>
+  <description></description>
+  <displayname>Inventory Management</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>new_connector</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/new_connector_openapidefinition.json</openapidefinition>
+</Connector>

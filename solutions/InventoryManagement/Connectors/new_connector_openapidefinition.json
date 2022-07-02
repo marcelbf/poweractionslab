@@ -1,0 +1,78 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Inventory Management",
+        "version": "1.1",
+        "description": "Code first custom connector"
+    },
+    "host": "inventorymanagementapim.azure-api.net",
+    "basePath": "/inventory",
+    "schemes": [
+        "https"
+    ],
+    "securityDefinitions": {
+        "apiKeyHeader": {
+            "type": "apiKey",
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header"
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        }
+    ],
+    "paths": {
+        "/api/WarehouseLocations": {
+            "get": {
+                "operationId": "get-api-warehouselocations",
+                "summary": "/api/WarehouseLocations - GET",
+                "tags": [
+                    "WarehouseLocations"
+                ],
+                "produces": [
+                    "text/plain",
+                    "application/json",
+                    "text/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/WarehouseCityArray"
+                        },
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "cityName": "string"
+                                }
+                            ],
+                            "text/json": [
+                                {
+                                    "cityName": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "WarehouseCity": {
+            "type": "object",
+            "properties": {
+                "cityName": {
+                    "type": "string"
+                }
+            }
+        },
+        "WarehouseCityArray": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/WarehouseCity"
+            }
+        }
+    },
+    "tags": []
+}
