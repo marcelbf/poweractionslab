@@ -80,6 +80,7 @@
       </Addresses>
     </Publisher>
     <RootComponents>
+      <RootComponent type="300" schemaName="cdev_inventorymanagement_bbdd1" behavior="0" />
       <RootComponent type="372" id="{809546ad-6ac7-ec11-a7b6-000d3a5c9834}" schemaName="new_connector" behavior="0" />
     </RootComponents>
     <MissingDependencies />
